@@ -1,5 +1,5 @@
 import { readFileSync } from "../utils";
-import { MapI, OrderBookI, OrderBookMapI, Sides } from "./types";
+import { MapI, OrderBookI, Sides } from "./types";
 
 const craftmanship = (data: string[]) => {
   const headlines = data.shift()?.split(",") as string[];
@@ -11,9 +11,6 @@ const craftmanship = (data: string[]) => {
     books: [],
     indexes: new Map<string, string>(),
   } as MapI;
-
-  //   console.log("headlines", headlines);
-  //   console.log("shift data", data);
 
   for (const row of data) {
     let currentObject = {} as OrderBookI;
